@@ -122,19 +122,17 @@
         
 
 }
-#playPauseBtn{
-            background: none;
-            color: inherit;
-            border: none;
-            padding: 0;
-            font: inherit;
-            cursor: pointer;
-            outline: inherit;
-        }
-        #playPauseIcon{
-            height: 80px;
-            width: 80px;
-        }
+#playPauseIcon {
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10; /* выше видео */
+}
+
 
     </style>
 </head>
@@ -154,27 +152,22 @@
             <img id="catChange" class="overlay-img" src="images\1cat.png" alt="Animated">
         </div>
         <audio id="myAudio" src="media/audio.mp3"></audio>
-        <button id="playPauseBtn">
-            <img id="playPauseIcon" src="images/play.png" alt="Play">
-        </button>
+        <img id="playPauseIcon" src="images/play.png" alt="Play">
         
         <script>
             var myAudio = document.getElementById("myAudio");
-            var playPauseBtn = document.getElementById("playPauseBtn");
             var playPauseIcon = document.getElementById("playPauseIcon");
             var catChange = document.getElementById("catChange");
         
             playPauseBtn.addEventListener("click", function() {
                 if (myAudio.paused) {
                     myAudio.play();
-                    playPauseIcon.src = "images\\pause.png";
+                    playPauseIcon.src = "images\\2cat.png";
                     playPauseIcon.alt = "Pause";
-                    catChange.src="images\\2cat.png";
                 } else {
                     myAudio.pause();
-                    playPauseIcon.src = "images\\play.png";
+                    playPauseIcon.src = "images\\1cat.png";
                     playPauseIcon.alt = "Play";
-                    catChange.src="images\\1cat.png";
                 }
             });
         </script>
