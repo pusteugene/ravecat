@@ -160,19 +160,28 @@
     <audio id="myAudio" src="media/audio.mp3"></audio>
 
     <script>
-        var myAudio = document.getElementById("myAudio");
-        var catChange = document.getElementById("catChange");
+    const catImages = [
+        "images/1cat.png",
+        "images/2cat.png",
+    ];
 
-        catChange.addEventListener("click", function () {
-            if (myAudio.paused) {
-                myAudio.play();
-                catChange.src = "images/2cat.png"; // Воспроизводит музыку — смена на 2cat
-            } else {
-                myAudio.pause();
-                catChange.src = "images/1cat.png"; // Пауза — вернуться к 1cat
-            }
-        });
-    </script>
+    const catChange = document.getElementById("catChange");
+    let currentIndex = 0;
+
+    catChange.addEventListener("click", function () {
+        currentIndex = (currentIndex + 1) % catImages.length;
+        catChange.src = catImages[currentIndex];
+
+        // Якщо хочеш, можна прив’язати до музики:
+        const myAudio = document.getElementById("myAudio");
+        if (myAudio.paused) {
+            myAudio.play();
+        } else {
+            myAudio.pause();
+        }
+    });
+</script>
+
 </div>
 
     
