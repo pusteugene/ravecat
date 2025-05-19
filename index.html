@@ -179,7 +179,7 @@
 
     catChange.addEventListener("click", function () {
         if (!isCycling) {
-            intervalId = setInterval(cycleCats, 100); // Змінюється кожну секунду
+            intervalId = setInterval(cycleCats, 500); // Змінюється кожну секунду
             myAudio.play(); // Запускаємо музику
         } else {
             clearInterval(intervalId);
