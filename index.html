@@ -108,13 +108,6 @@
         width: 80%;
         height: auto;
     }
-    .ca-text{
-        font-size: 25px;
-        word-break: break-all;
-        color: #dabb3e;
-        text-shadow: 2px 2px black;
-        z-index: 1;
-    }
     .center-content {
             height: calc(100vh - 144px);
             justify-content: flex-start;
@@ -125,24 +118,24 @@
 
 #catWrapper {
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100vw;
-    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 5; /* Ниже ссылок, если нужно */
-    pointer-events: none; /* Не мешает ссылкам */
+    z-index: 5;
+    pointer-events: none; /* Щоб не заважав кліку по посиланнях */
 }
 
 #catChange {
     max-width: 100vw;
-    max-height: 100vh;
+    max-height: 40vh;
     object-fit: contain;
     cursor: pointer;
-    pointer-events: auto; /* Только котик реагирует на клик */
+    pointer-events: auto; /* Щоб саме котик реагував на кліки */
 }
+
 
 
 
@@ -161,8 +154,9 @@
     <div class="center-content">
 
     <div id="catWrapper">
-        <img id="catChange" src="images/1cat.png" alt="Cat">
-    </div>
+    <img id="catChange" src="images/1cat.png" alt="Cat">
+</div>
+
 
 
     <audio id="myAudio" src="media/audio.mp3"></audio>
@@ -181,8 +175,6 @@
             }
         });
     </script>
-
-    <p class="ca-text">CA: EfPcdgPqzr1CySYYha5DfamXEZ9TovM3oMbzWQG9ZDTj</p>
 </div>
 
     
