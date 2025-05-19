@@ -160,35 +160,20 @@
     <audio id="myAudio" src="media/audio.mp3"></audio>
 
     <script>
-    const catImages = [
-        "images/1cat.png",
-        "images/2cat.png",
-    ];
-
     const catChange = document.getElementById("catChange");
-    const myAudio = document.getElementById("myAudio");
-
-    let currentIndex = 0;
-    let isCycling = false;
-    let intervalId = null;
-
-    function cycleCats() {
-        currentIndex = (currentIndex + 1) % catImages.length;
-        catChange.src = catImages[currentIndex];
-    }
+    let isGifPlaying = false;
 
     catChange.addEventListener("click", function () {
-        if (!isCycling) {
-            intervalId = setInterval(cycleCats, 500); // Змінюється кожну секунду
-            myAudio.play(); // Запускаємо музику
+        if (!isGifPlaying) {
+            catChange.src = "images/cat2.2.gif";
         } else {
-            clearInterval(intervalId);
-            myAudio.pause(); // Зупиняємо музику
+            catChange.src = "images/1cat.png";
         }
 
-        isCycling = !isCycling;
+        isGifPlaying = !isGifPlaying;
     });
 </script>
+
 
 
 </div>
