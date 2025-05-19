@@ -123,17 +123,28 @@
 
 }
 
-#catChange {
+#catWrapper {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5; /* Ниже ссылок, если нужно */
+    pointer-events: none; /* Не мешает ссылкам */
+}
+
+#catChange {
     max-width: 100vw;
     max-height: 100vh;
-    transform: translate(-50%, -50%);
     object-fit: contain;
     cursor: pointer;
-    z-index: 10;
+    pointer-events: auto; /* Только котик реагирует на клик */
 }
+
+
 
     </style>
 </head>
@@ -149,7 +160,10 @@
     </div>
     <div class="center-content">
 
-    <img id="catChange" src="images/1cat.png" alt="Cat">
+    <div id="catWrapper">
+        <img id="catChange" src="images/1cat.png" alt="Cat">
+    </div>
+
 
     <audio id="myAudio" src="media/audio.mp3"></audio>
 
@@ -161,11 +175,9 @@
             if (myAudio.paused) {
                 myAudio.play();
                 catChange.src = "images/2cat.png"; // Воспроизводит музыку — смена на 2cat
-                catChange.alt = "Pause";
             } else {
                 myAudio.pause();
                 catChange.src = "images/1cat.png"; // Пауза — вернуться к 1cat
-                catChange.alt = "Play";
             }
         });
     </script>
