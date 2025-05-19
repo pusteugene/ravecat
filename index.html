@@ -163,24 +163,35 @@
     const catImages = [
         "images/1cat.png",
         "images/2cat.png",
+        "images/3cat.png",
+        "images/4cat.png"
     ];
 
     const catChange = document.getElementById("catChange");
-    let currentIndex = 0;
+    const myAudio = document.getElementById("myAudio");
 
-    catChange.addEventListener("click", function () {
+    let currentIndex = 0;
+    let isCycling = false;
+    let intervalId = null;
+
+    function cycleCats() {
         currentIndex = (currentIndex + 1) % catImages.length;
         catChange.src = catImages[currentIndex];
+    }
 
-        // Якщо хочеш, можна прив’язати до музики:
-        const myAudio = document.getElementById("myAudio");
-        if (myAudio.paused) {
-            myAudio.play();
+    catChange.addEventListener("click", function () {
+        if (!isCycling) {
+            intervalId = setInterval(cycleCats, 1000); // Змінюється кожну секунду
+            myAudio.play(); // Запускаємо музику
         } else {
-            myAudio.pause();
+            clearInterval(intervalId);
+            myAudio.pause(); // Зупиняємо музику
         }
+
+        isCycling = !isCycling;
     });
 </script>
+
 
 </div>
 
