@@ -151,7 +151,7 @@
     <div class="center-content">
         <div class="frame">
             <img class="frame-img" src="images/frame.png" alt="Frame">
-            <img class="overlay-img" src="images\1cat.png" alt="Animated">
+            <img id="catChange" class="overlay-img" src="images\1cat.png" alt="Animated">
         </div>
         <audio id="myAudio" src="media/audio.mp3"></audio>
         <button id="playPauseBtn">
@@ -162,16 +162,19 @@
             var myAudio = document.getElementById("myAudio");
             var playPauseBtn = document.getElementById("playPauseBtn");
             var playPauseIcon = document.getElementById("playPauseIcon");
+            var catChange = document.getElementById("catChange");
         
             playPauseBtn.addEventListener("click", function() {
                 if (myAudio.paused) {
                     myAudio.play();
                     playPauseIcon.src = "pause.png";
                     playPauseIcon.alt = "Pause";
+                    catChange.src="images\\1cat.png";
                 } else {
                     myAudio.pause();
                     playPauseIcon.src = "play.png";
                     playPauseIcon.alt = "Play";
+                    catChange.src="images\\2cat.png";
                 }
             });
         </script>
