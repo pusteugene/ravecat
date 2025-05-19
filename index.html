@@ -122,17 +122,18 @@
         
 
 }
-#playPauseIcon {
-    height: 80px;
-    width: 80px;
+
+#catChange {
     position: fixed;
     top: 50%;
     left: 50%;
+    max-width: 100vw;
+    max-height: 100vh;
     transform: translate(-50%, -50%);
+    object-fit: contain;
     cursor: pointer;
-    z-index: 10; /* выше видео */
+    z-index: 10;
 }
-
 
     </style>
 </head>
@@ -147,10 +148,9 @@
         <a href="https://twitter.com/RaveCatOnSol" target="_blank"><img src="images/menu4.png" alt="Menu 4"></a>
     </div>
     <div class="center-content">
-    <div class="frame">
-        <img class="frame-img" src="images/frame.png" alt="Frame">
-        <img id="catChange" class="overlay-img" src="images/1cat.png" alt="Animated">
-    </div>
+
+    <img id="catChange" src="images/1cat.png" alt="Cat">
+
     <audio id="myAudio" src="media/audio.mp3"></audio>
 
     <script>
