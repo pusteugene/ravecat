@@ -147,32 +147,32 @@
         <a href="https://twitter.com/RaveCatOnSol" target="_blank"><img src="images/menu4.png" alt="Menu 4"></a>
     </div>
     <div class="center-content">
-        <div class="frame">
-            <img class="frame-img" src="images/frame.png" alt="Frame">
-            <img id="catChange" class="overlay-img" src="images\1cat.png" alt="Animated">
-        </div>
-        <audio id="myAudio" src="media/audio.mp3"></audio>
-        <img id="playPauseIcon" src="images/play.png" alt="Play">
-        
-        <script>
-            var myAudio = document.getElementById("myAudio");
-            var playPauseIcon = document.getElementById("playPauseIcon");
-            var catChange = document.getElementById("catChange");
-        
-            playPauseBtn.addEventListener("click", function() {
-                if (myAudio.paused) {
-                    myAudio.play();
-                    playPauseIcon.src = "images\\2cat.png";
-                    playPauseIcon.alt = "Pause";
-                } else {
-                    myAudio.pause();
-                    playPauseIcon.src = "images\\1cat.png";
-                    playPauseIcon.alt = "Play";
-                }
-            });
-        </script>
-        <p class="ca-text">CA: EfPcdgPqzr1CySYYha5DfamXEZ9TovM3oMbzWQG9ZDTj</p>
+    <div class="frame">
+        <img class="frame-img" src="images/frame.png" alt="Frame">
+        <img id="catChange" class="overlay-img" src="images/1cat.png" alt="Animated">
     </div>
+    <audio id="myAudio" src="media/audio.mp3"></audio>
+
+    <script>
+        var myAudio = document.getElementById("myAudio");
+        var catChange = document.getElementById("catChange");
+
+        catChange.addEventListener("click", function () {
+            if (myAudio.paused) {
+                myAudio.play();
+                catChange.src = "images/2cat.png"; // Воспроизводит музыку — смена на 2cat
+                catChange.alt = "Pause";
+            } else {
+                myAudio.pause();
+                catChange.src = "images/1cat.png"; // Пауза — вернуться к 1cat
+                catChange.alt = "Play";
+            }
+        });
+    </script>
+
+    <p class="ca-text">CA: EfPcdgPqzr1CySYYha5DfamXEZ9TovM3oMbzWQG9ZDTj</p>
+</div>
+
     
     <!-- <audio src="audio.mp3" autoplay loop>
         <source src="audio.mp3">
