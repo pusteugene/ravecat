@@ -60,14 +60,16 @@
         text-shadow: 2px 2px black;
         
     }
-    video {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
+   video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
     @media (max-width: 768px) {
         .menu {
             display: flex;
