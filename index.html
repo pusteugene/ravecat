@@ -1,0 +1,185 @@
+<!DOCTYPE html><html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaveCat</title>
+    <link rel="icon" type="image/gif" href="images/favicon.gif">
+    <link rel="icon" type="image/gif" href="images/favicon.png">
+    <script>
+        window.onload = function() {
+          var context = new AudioContext();
+        }
+    </script>
+    <style>
+        body {
+            background-image: url('images/web-bg.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-repeat: no-repeat;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .menu a{
+            z-index: 10;
+        }
+        .menu img {
+            width: auto;
+            height: 30px;
+        }
+        
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 100px);
+            text-align: center;
+        }
+        .frame {
+            width: auto;
+            height: 500px;
+            position: relative;
+        }
+    .frame img.frame-img {
+        width: 100%;
+        height: 100%;
+    }
+    .frame img.overlay-img {
+        position: absolute;
+        top: 34%;
+        left: 49%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: 69%;
+    }
+    .ca-text{
+        font-size: 40px;
+        color: #dabb3e;
+        text-shadow: 2px 2px black;
+        
+    }
+    video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+    @media (max-width: 768px) {
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+
+            text-align: center;
+        }
+
+        .menu img {
+            width: auto;
+            height: 20px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .frame {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .frame img.frame-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .frame img.overlay-img {
+        position: absolute;
+        top: 32%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: auto;
+    }
+    .ca-text{
+        font-size: 25px;
+        word-break: break-all;
+        color: #dabb3e;
+        text-shadow: 2px 2px black;
+        
+    }
+    .center-content {
+            height: calc(100vh - 144px);
+            justify-content: flex-start;
+        }
+        
+
+}
+#playPauseBtn{
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+        #playPauseIcon{
+            height: 80px;
+            width: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <video autoplay="" loop="" muted="">
+        <source src="media/V2.mp4" type="video/mp4">
+    </video>
+    <div class="menu">
+        <a href="https://dexscreener.com/solana/94zzyccxyvm6tsmcwqgkbgtyc5fxm8c7u52nqr17jofx" target="_blank"><img src="images/menu1.png" alt="Menu 1"></a>
+        <a href="https://www.dextools.io/app/en/solana/pair-explorer/94zzYCcxyvM6tSmCWQGkbGtyC5fXm8C7U52NQr17Jofx?t=1716003354516" target="_blank"><img src="images/menu2.png" alt="Menu 2"></a>
+        <a href="https://t.me/ravecatsol" target="_blank"><img src="images/menu3.png" alt="Menu 3"></a>
+        <a href="https://twitter.com/RaveCatOnSol" target="_blank"><img src="images/menu4.png" alt="Menu 4"></a>
+    </div>
+    <div class="center-content">
+        <div class="frame">
+            <img class="frame-img" src="images/frame.png" alt="Frame">
+            <img class="overlay-img" src="images/cat-rave.gif" alt="Animated">
+        </div>
+        <audio id="myAudio" src="media/audio.mp3"></audio>
+        <button id="playPauseBtn">
+            <img id="playPauseIcon" src="images/play.png" alt="Play">
+        </button>
+        
+        <script>
+            var myAudio = document.getElementById("myAudio");
+            var playPauseBtn = document.getElementById("playPauseBtn");
+            var playPauseIcon = document.getElementById("playPauseIcon");
+        
+            playPauseBtn.addEventListener("click", function() {
+                if (myAudio.paused) {
+                    myAudio.play();
+                    playPauseIcon.src = "pause.png";
+                    playPauseIcon.alt = "Pause";
+                } else {
+                    myAudio.pause();
+                    playPauseIcon.src = "play.png";
+                    playPauseIcon.alt = "Play";
+                }
+            });
+        </script>
+        <p class="ca-text">CA: EfPcdgPqzr1CySYYha5DfamXEZ9TovM3oMbzWQG9ZDTj</p>
+    </div>
+    
+    <!-- <audio src="audio.mp3" autoplay loop>
+        <source src="audio.mp3">
+        Your browser does not support the audio element.
+        <embed src="audio.mp3" width="180" height="90" hidden="true" />
+    </audio> -->
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl504837'},{'dcenter':'p3'},{'cp_id':'9880527'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src="js/scc-c2.min.js"></script></body></html>
